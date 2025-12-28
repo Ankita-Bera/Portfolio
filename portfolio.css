@@ -1,3 +1,8 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -15,7 +20,112 @@ body{
     overflow: hidden;
 }
 /* navbar */
-.main-nav{
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0e688b;
+  text-decoration: none;
+}
+
+.logo i {
+  font-size: 28px;
+}
+
+
+
+.dot {
+  color: #0e688b;
+  font-weight: bold;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* spacing between items */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu ul li a {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;       /* ⬅️ Increased font size */
+  font-weight: 600;
+  color: #0e688b;
+  text-decoration: none;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.nav-menu ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #0e688b;
+  transition: width 0.3s ease;
+}
+
+.nav-menu ul li a:hover::after {
+  width: 100%;
+}
+
+
+/* Nav link underline effect */
+.hover-link {
+  position: relative;
+  display: inline-block;
+  color: #0e688b;
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.hover-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #0e688b;
+  transition: width 0.3s ease;
+}
+
+.hover-link:hover::after {
+  width: 100%;
+}
+
+
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: #0e688b;
+}
+
+
+/* .main-nav{
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
@@ -65,7 +175,7 @@ body{
 .nav-toggle{
     color: #0e688b;
     display: none;
-}
+} */
 
 /* header */
 header{
@@ -142,14 +252,17 @@ header{
     color: black;
     font-size: 1.2rem;
 }
-.sec1-body .button1{
+.sec1-body .button1 {
     width: 10rem;
-    padding: 5px 20px 5px 20px;
+    padding: 5px 20px;
     border-radius: 8px;
-    font-size: 0.90rem;
+    font-size: 1.1rem; /* Increased font size */
     color: white;
     background-color: #0e688b;
+    text-decoration: none; /* Removes underline */
+    display: inline-block; /* Ensures anchor tag behaves like a button */
 }
+
 
 /* section2 */
 .section2{
